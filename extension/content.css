@@ -1,0 +1,123 @@
+/* Full-size layer over the player; only its buttons take clicks. */
+.ops-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2147483000;
+  pointer-events: none;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.ops-overlay button {
+  font: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* Skip Intro: bottom-right, above the player controls. */
+.ops-skip {
+  position: absolute;
+  right: 16px;
+  bottom: 84px;
+  display: none;
+  padding: 10px 18px;
+  font-size: 16px !important;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(20, 20, 20, 0.85);
+  border: 2px solid #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.ops-skip.ops-visible { display: block; }
+.ops-skip:hover { background: #fff; color: #111; }
+
+/* Settings gear: top-right, fades in while hovering the player. */
+.ops-settings {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.ops-gear {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  color: #fff;
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s;
+}
+.ops-gear svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  transition: transform 0.4s ease;
+}
+.ops-gear:hover { background: rgba(20, 20, 20, 0.9); }
+.ops-gear:hover svg { transform: rotate(60deg); }
+.ops-gear:focus-visible { opacity: 1; outline: 2px solid #fff; outline-offset: 2px; }
+*:hover > .ops-overlay .ops-gear,
+.ops-settings:has(.ops-menu:not([hidden])) .ops-gear { opacity: 1; }
+
+.ops-menu {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 240px;
+  padding: 6px;
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  color: #eee;
+  font-size: 13px;
+}
+.ops-menu[hidden] { display: none; }
+
+.ops-arc {
+  padding: 4px 6px 8px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 4px;
+}
+
+.ops-item {
+  text-align: left;
+  padding: 6px;
+  color: #eee;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+}
+.ops-item:hover:not(:disabled) { background: rgba(255, 255, 255, 0.12); }
+.ops-item:disabled { opacity: 0.4; cursor: default; }
+
+.ops-arc { white-space: pre-line; }
+
+.ops-scope {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+.ops-scope button {
+  flex: 1;
+  padding: 4px;
+  font-size: 12px !important;
+  color: #ccc;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+}
+.ops-scope button.ops-active {
+  color: #111;
+  background: #fff;
+  border-color: #fff;
+}

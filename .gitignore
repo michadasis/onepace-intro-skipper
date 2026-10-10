@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Research cache (audio clips, fingerprints, frame grabs) — large, regenerable
+audio/
+fp/
+frames/
+*.wav
+*.raw
+onepace-intro-cache/
+
+# Packaged extension builds
+*.zip
+*.xpi
+*.crx
+*.pem
+web-ext-artifacts/
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "One Pace Intro Skipper",
+  "version": "1.0.0",
+  "description": "Adds a \"Skip Intro\" button to One Pace episodes on pixeldrain. Intro times are remembered per arc.",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "One Pace Intro Skipper",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://pixeldrain.net/*",
+        "https://pixeldrain.com/*",
+        "https://pixeldra.in/*"
+      ],
+      "js": ["defaults.js", "content.js"],
+      "css": ["content.css"],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "onepace-intro-skipper@local",
+      "strict_min_version": "115.0"
+    }
+  }
+}
