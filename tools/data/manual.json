@@ -1,0 +1,23 @@
+{
+ "_comment": "Hand-verified intro times (seconds), checked frame by frame. Applied by merge.py over audio results; official chapters still win.",
+ "Fishman Island 01": {
+  "start": 0.0,
+  "end": 113.0
+ },
+ "Enies Lobby 10": {
+  "start": 0.0,
+  "end": 109.8
+ },
+ "Egghead 22": {
+  "start": 0.0,
+  "end": 89.8
+ },
+ "Warship Island 01 (April Fools 2025) 01": {
+  "start": 44.3,
+  "end": 154.6
+ },
+ "Warship Island 01 (April Fools 2025)": {
+  "start": 44.3,
+  "end": 154.6
+ }
+}

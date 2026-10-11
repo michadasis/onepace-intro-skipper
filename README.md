@@ -3,7 +3,7 @@
 Chrome + Firefox extension that adds a **Skip Intro** button to [One Pace](https://onepace.net/en/watch)
 episodes, which are played on pixeldrain.
 
-Intro times are built in for every episode (265 at the time of writing), measured from the
+Intro times are built in for every episode (492 across all arcs at the time of writing), measured from the
 actual files — intros differ per arc, some episodes have a scene before the intro, and some
 have no intro at all.
 
@@ -60,7 +60,7 @@ Priority: your episode setting → your arc setting → built-in episode → bui
    chapters first, audio otherwise.
 
 A few episodes whose opening is unique (no other episode to compare against) were checked
-frame by frame; they are marked `"manual": "frame-checked"` in `tools/data/audio_results.json`.
+frame by frame and stored in `tools/data/manual.json`; `merge.py` always applies them.
 
 Requires Python 3 and ffmpeg on PATH. `tools/data/files.json` is the episode list
 (pixeldrain 480p albums); refresh it when One Pace releases new episodes.

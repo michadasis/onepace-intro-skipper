@@ -12,7 +12,7 @@ CACHE = os.environ.get("CACHE", os.path.join(os.environ.get("TEMP", HERE), "onep
 os.makedirs(CACHE, exist_ok=True)
 os.chdir(CACHE)
 sys.path.insert(0, HERE)
-from analyze import analyze, key
+from analyze import analyze, key, pick_episodes
 
 SECONDS = 240
 THREADS = int(os.environ.get("THREADS", "2"))
@@ -20,20 +20,14 @@ DELAY = float(os.environ.get("DELAY", "2"))
 FULL = SECONDS * 8000 * 2 * 0.98
 os.makedirs("audio", exist_ok=True)
 
-# 1) Episode list: 480p sub lists (+ Extended/Alternate). Dub/CC share the same timing.
+# 1) Episode list: every album on onepace.net, one file per episode (see pick_episodes).
 files = json.load(open(FILES))
-lists = []
+eps = pick_episodes(files)
+# Reuse audio already downloaded for another copy of the same episode.
+cached = {}
 for f in files:
-    if f["list"] not in lists: lists.append(f["list"])
-titles = {f["list"]: f["listTitle"] for f in files}
-use = [l for l in lists if "[En Sub]" in titles[l]]
-if os.environ.get("LISTS"): use = [l for l in use if l in os.environ["LISTS"].split(",")]
-eps, seen = [], set()
-for l in use:
-    for f in sorted((f for f in files if f["list"] == l), key=lambda f: key(f["name"])):
-        k = key(f["name"])
-        if k not in seen:
-            seen.add(k); eps.append((k, f["id"]))
+    if os.path.exists(f"audio/{f['id']}.wav"): cached.setdefault(key(f["name"]), f["id"])
+eps = [(k, cached.get(k, fid)) for k, fid in eps]
 # Only episodes without an official "Opening" chapter need audio, plus up to 2 neighbours
 # on each side so every one of them has something to be compared against.
 chapters = json.load(open(os.path.join(DATA, "chapters.json"))) if os.path.exists(os.path.join(DATA, "chapters.json")) else {}

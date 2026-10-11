@@ -4,20 +4,14 @@
 import json, os, re, subprocess, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from analyze import key
+from analyze import key, pick_episodes
 
 DATA = os.path.join(HERE, "data")
 files = json.load(open(os.path.join(DATA, "files.json")))
 out_path = os.path.join(DATA, "chapters.json")
 chapters = json.load(open(out_path)) if os.path.exists(out_path) else {}
 
-titles = {f["list"]: f["listTitle"] for f in files}
-eps, seen = [], set()
-for f in files:
-    if "[En Sub]" not in titles[f["list"]]: continue
-    k = key(f["name"])
-    if k not in seen:
-        seen.add(k); eps.append((k, f["id"]))
+eps = pick_episodes(files)
 
 DELAY = float(os.environ.get("DELAY", "3"))
 for n, (k, fid) in enumerate(eps, 1):

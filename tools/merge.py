@@ -11,21 +11,27 @@ def load(name):
     p = os.path.join(DATA, name)
     return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
 
-chapters, audio = load("chapters.json"), load("audio_results.json")
+chapters, audio, manual = load("chapters.json"), load("audio_results.json"), load("manual.json")
+manual.pop("_comment", None)
 
 def arc_of(ep):
     return re.sub(r"\s+\d+(\s*-\s*\d+)?(\s+[A-Za-z]+)*$", "", ep).strip() or ep
 
 episodes, source = {}, Counter()
-for k in sorted(set(chapters) | set(audio)):
+for k in sorted(set(chapters) | set(audio) | set(manual)):
     chs = chapters.get(k)
-    op = [c for c in (chs or []) if re.match(r"(opening|intro|op\b)", c["title"], re.I)]
+    # An "Opening"/"Intro" chapter longer than 3 min is not a theme song (e.g. the whole special).
+    op = [c for c in (chs or []) if re.match(r"(opening|intro|op\b)", c["title"], re.I)
+          and c["end"] - c["start"] <= 180]
     if op:
         episodes[k] = {"start": round(op[0]["start"], 1), "end": round(op[0]["end"], 1)}
         source["chapters"] += 1
     elif chs:   # has chapters but no Opening chapter -> the release has no intro
         episodes[k] = {"none": True}
         source["chapters (no opening)"] += 1
+    elif k in manual:
+        episodes[k] = manual[k]
+        source["manual"] += 1
     elif k in audio:
         r = audio[k]
         episodes[k] = {"none": True} if r.get("none") else {"start": r["start"], "end": r["end"]}
