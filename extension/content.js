@@ -173,10 +173,10 @@
     );
 
     // Gear + menu sit in the top-right corner, the Skip button in the bottom-right.
-    const settings = document.createElement("div");
-    settings.className = "ops-settings";
-    settings.append(gear, menu);
-    overlay.append(settings, skipBtn);
+    const settingsBox = document.createElement("div");
+    settingsBox.className = "ops-settings";
+    settingsBox.append(gear, menu);
+    overlay.append(settingsBox, skipBtn);
   }
 
   function describe(r) {
