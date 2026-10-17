@@ -85,7 +85,7 @@ var OPS_DEFAULTS = {
   },
   "Punk Hazard": {
    "start": 0,
-   "end": 150.9
+   "end": 150.7
   },
   "Return to Sabaody": {
    "start": 0,
@@ -291,7 +291,7 @@ var OPS_DEFAULTS = {
   },
   "Arlong Park 08": {
    "start": 136.6,
-   "end": 247.3
+   "end": 245.1
   },
   "Arlong Park 09": {
    "start": 0.0,
@@ -593,7 +593,7 @@ var OPS_DEFAULTS = {
   },
   "Egghead 08 Extended": {
    "start": 120.8,
-   "end": 211.8
+   "end": 209.6
   },
   "Egghead 09": {
    "start": 31.4,
@@ -636,8 +636,8 @@ var OPS_DEFAULTS = {
    "end": 89.9
   },
   "Egghead 17": {
-   "start": 306.0,
-   "end": 395.9
+   "start": 302.2,
+   "end": 392.7
   },
   "Egghead 18": {
    "start": 54.6,
@@ -685,7 +685,7 @@ var OPS_DEFAULTS = {
   },
   "Enies Lobby 05": {
    "start": 25.3,
-   "end": 138.3
+   "end": 134.6
   },
   "Enies Lobby 06": {
    "start": 0.0,
@@ -709,7 +709,7 @@ var OPS_DEFAULTS = {
   },
   "Enies Lobby 11": {
    "start": 0.0,
-   "end": 113.2
+   "end": 110.0
   },
   "Enies Lobby 12": {
    "start": 0.0,
@@ -804,7 +804,7 @@ var OPS_DEFAULTS = {
   },
   "Fishman Island 10": {
    "start": 0.0,
-   "end": 152.2
+   "end": 149.5
   },
   "Fishman Island 11": {
    "start": 0.0,
@@ -1148,7 +1148,7 @@ var OPS_DEFAULTS = {
   },
   "Punk Hazard 04": {
    "start": 0.0,
-   "end": 152.6
+   "end": 149.9
   },
   "Punk Hazard 05": {
    "start": 0.0,
@@ -1164,7 +1164,7 @@ var OPS_DEFAULTS = {
   },
   "Punk Hazard 08": {
    "start": 0.0,
-   "end": 152.7
+   "end": 149.5
   },
   "Punk Hazard 09": {
    "start": 0.0,
@@ -1220,7 +1220,7 @@ var OPS_DEFAULTS = {
   },
   "Punk Hazard 22": {
    "start": 0.0,
-   "end": 160.3
+   "end": 158.6
   },
   "Return to Sabaody 01": {
    "start": 156.2,
@@ -1264,7 +1264,7 @@ var OPS_DEFAULTS = {
   },
   "Romance Dawn 03": {
    "start": 58.2,
-   "end": 170.0
+   "end": 167.8
   },
   "Romance Dawn 04": {
    "start": 0.0,
@@ -1555,7 +1555,7 @@ var OPS_DEFAULTS = {
   },
   "Wano 02 Extended": {
    "start": 0.0,
-   "end": 103.8
+   "end": 101.6
   },
   "Wano 03": {
    "start": 0.0,
@@ -1753,7 +1753,7 @@ var OPS_DEFAULTS = {
   },
   "Wano 51": {
    "start": 0.0,
-   "end": 94.0
+   "end": 91.8
   },
   "Wano 52": {
    "start": 0.0,
@@ -1765,7 +1765,7 @@ var OPS_DEFAULTS = {
   },
   "Wano 54": {
    "start": 0.0,
-   "end": 93.9
+   "end": 91.7
   },
   "Wano 55": {
    "start": 0.0,
@@ -1792,19 +1792,19 @@ var OPS_DEFAULTS = {
    "end": 90.9
   },
   "Wano 60": {
-   "start": 219.5,
-   "end": 309.2
+   "start": 215.3,
+   "end": 307.0
   },
   "Wano 61": {
    "start": 90.5,
    "end": 180.3
   },
   "Wano 62": {
-   "start": 222.1,
-   "end": 312.0
+   "start": 219.4,
+   "end": 309.8
   },
   "Wano 62 Extended": {
-   "start": 221.9,
+   "start": 219.7,
    "end": 311.7
   },
   "Warship Island 01 (April Fools 2025)": {
@@ -1960,12 +1960,12 @@ var OPS_DEFAULTS = {
    "end": 94.3
   },
   "Whole Cake Island 15": {
-   "start": 325.9,
-   "end": 420.0
+   "start": 322.2,
+   "end": 416.3
   },
   "Whole Cake Island 16": {
    "start": 0.0,
-   "end": 97.4
+   "end": 94.2
   },
   "Whole Cake Island 17": {
    "start": 0.0,
@@ -1981,7 +1981,7 @@ var OPS_DEFAULTS = {
   },
   "Whole Cake Island 20": {
    "start": 0.1,
-   "end": 97.3
+   "end": 94.1
   },
   "Whole Cake Island 21": {
    "start": 95.0,

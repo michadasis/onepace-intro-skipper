@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "One Pace Intro Skipper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Adds a \"Skip Intro\" button to One Pace episodes on pixeldrain. Intro times are remembered per arc.",
   "homepage_url": "https://github.com/michadasis/onepace-intro-skipper",
   "icons": {
